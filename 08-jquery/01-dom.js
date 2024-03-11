@@ -3,6 +3,7 @@
 
 // Option #1
 // Fetch JavaScript objects representing specific elements in the DOM
+/*
 let userInput1 = document.querySelector('#userInput1');
 let copy = document.querySelector('#copy');
 let output1 = document.querySelector('#output1');
@@ -15,26 +16,20 @@ function handleClick(event) {
   console.log('click event', event);
   output1.textContent = userInput1.value;
 }
+*/
 
-// Option #2
-// document.getElementById('copy').onclick = () => {
-//   let userInput = document.getElementById('userInput1');
-//   let output = document.getElementById('output');
+$("document").ready(() => {
+  $("#copy").on("click", (event) => {
+    console.log("click event", event);
 
-//   output.textContent = userInput.value;
-// };
-
-// Option #3
-// document.getElementById('copy').onclick = () => {
-//   document.getElementById('output').textContent = document.getElementById(
-//     'userInput1'
-//   ).value;
-// };
-
+    $("#output1").text($("#userInput1").val());
+  });
+});
 // Exercise #2:
 // When the user enters input text, copy the user input to the output area
 
 // Fetch JavaScript objects representing specific elements in the DOM
+/*
 let userInput2 = document.querySelector('#userInput2');
 let output2 = document.querySelector('#output2');
 
@@ -46,3 +41,11 @@ function handleInput(event) {
   console.log('click event', event);
   output2.textContent = userInput2.value;
 }
+*/
+$("document").ready(() => {
+  $("#userInput2").on("input", (event) => {
+    console.log("click event", event);
+
+    $("#output2").text($("#userInput2").val());
+  });
+});
